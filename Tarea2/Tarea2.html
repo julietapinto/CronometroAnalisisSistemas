@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Cronómetro de Competencia</title>
+
+<style>
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#1e3c72,#2a5298);
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    width:700px;
+    text-align:center;
+}
+
+h1{
+    margin-bottom:20px;
+}
+
+#cronometro{
+    font-size:48px;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+
+.botones{
+    margin-bottom:20px;
+}
+
+button{
+    border:none;
+    padding:12px 18px;
+    margin:5px;
+    font-size:15px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.iniciar{ background:#28a745; color:white; }
+.pausar{ background:#ffc107; }
+.reiniciar{ background:#dc3545; color:white; }
+.registrar{ background:#007bff; color:white; }
+
+table{
+    width:100%;
+    border-collapse: collapse;
+    margin-top:20px;
+}
+
+th{
+    background:#2a5298;
+    color:white;
+}
+
+th,td{
+    padding:10px;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f5f5f5;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Cronómetro de Competencia</h1>
+
+<div id="cronometro">00:00:000</div>
+
+<div class="botones">
+<button class="iniciar" onclick="iniciar()">Iniciar</button>
+<button class="pausar" onclick="pausar()">Pausar</button>
+<button class="reiniciar" onclick="reiniciar()">Reiniciar</button>
+<button class="registrar" onclick="registrarTiempo()">Registrar Tiempo</button>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Tiempo</th>
+<th>Diferencia con el primero</th>
+</tr>
+</thead>
+
+<tbody id="tablaTiempos"></tbody>
+</table>
+
+</div>
+
+<script src="cronometro.js"></script>
+
+</body>
+</html>
